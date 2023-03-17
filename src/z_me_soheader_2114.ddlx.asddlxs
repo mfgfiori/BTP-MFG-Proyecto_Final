@@ -58,13 +58,13 @@ annotate view z_c_soheader_2114 with
       identification  : [{ position: 70, label: 'Delivery Date' }]}
   DeliveryDate;
   @UI: {
-       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'IconStatus'},
-                          { position: 90, importance: #HIGH, label: 'Image', value: 'ImageURL'}],
-       identification  : [{ position: 80, label: 'Order Status', criticality: 'IconStatus'},
-                          { position: 90, label: 'Image', value: 'ImageURL'  }]                           
+       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'IconStatus'}],
+//                          { position: 90, importance: #HIGH, label: 'Image', value: 'ImageURL'}],
+       identification  : [{ position: 80, label: 'Order Status', criticality: 'IconStatus'}]
+//                          { position: 90, label: 'Image', value: 'ImageURL'  }]                           
        }
   @UI.textArrangement: #TEXT_ONLY
   Status;
-//  @UI.hidden: true      
-//  ImageURL;
+  @UI.hidden: true      
+  ImageURL;
 }

@@ -23,6 +23,7 @@ define root view z_i_soheader_2114
           when 006 then  1 --red
           when 007 then  1 --red
           else 0 end as IconStatus,
+      @Semantics.imageUrl: true          
       'https://i0.wp.com/logaligroup.com/wp-content/uploads/2021/11/LOGALI_AZUL_DEGRADE_RGB_PNG-10.png?resize=823%2C800&ssl=1' as LogoURL,    
       @Semantics.imageUrl: true
       imageurl,

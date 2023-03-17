@@ -11,6 +11,9 @@ annotate entity Z_C_SOITEMS_2114 with
                 type      : #IDENTIFICATION_REFERENCE,
                 label     : 'Item',
                 position  : 10 }]
+  @UI: {   
+      lineItem        : [{ position: 05, importance: #HIGH }],
+      identification  : [{ position: 05, label: 'Position Id' }]}                
   PositionId;
   @Search.defaultSearchElement: true
   @UI: {

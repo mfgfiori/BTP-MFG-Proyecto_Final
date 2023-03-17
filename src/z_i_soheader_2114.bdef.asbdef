@@ -1,0 +1,47 @@
+managed;// implementation in class zbp_i_soheader_2114 unique;
+//strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for z_i_soheader_2114 alias SalesOrder
+implementation in class zbp_i_soheader_2114 unique
+persistent table zso_header_2114
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  //fields: read only
+  field ( readonly ) iconstatus, logourl;
+  //mandatory fields that are required to create a Sales Order
+  field ( mandatory : create ) id, email;
+  field ( features:instance ) id;
+
+  create;
+  update;
+  delete;
+
+  association _SalesOrderItems { create ( features : instance ); }
+
+  mapping for  zso_header_2114 corresponding;
+
+}
+
+define behavior for z_i_soitems_2114 alias SalesOrderItems
+implementation in class zbp_i_soitems_2114 unique
+persistent table zso_items_2114
+lock dependent by _SalesOrder
+authorization dependent by _SalesOrder
+//etag master <field_name>
+{
+    //fields: read only
+  field ( readonly ) id;
+   // Campos Obligatorios
+  field ( mandatory : create ) id_pos;
+  field ( features:instance ) id_pos;
+
+  update;
+  delete;
+
+  association _SalesOrder;
+
+  mapping for  zso_items_2114 corresponding;
+}

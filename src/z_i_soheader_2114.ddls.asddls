@@ -15,14 +15,11 @@ define root view z_i_soheader_2114
       deliverydate,
       orderstatus,
       case orderstatus
-          when 001 then  3 --green
-          when 002 then  3 --green
-          when 005 then  3 --green
-          when 004 then 2 -- yellow
-          when 003 then  1 --green
-          when 006 then  1 --red
-          when 007 then  1 --red
-          else 0 end as IconStatus,
+          when 0 then  'New'
+          when 1 then  'Cancel'
+          when 2 then  'Processing'
+          when 3 then  'Completed'      
+      end as StatusText,
       @Semantics.imageUrl: true          
       'https://i0.wp.com/logaligroup.com/wp-content/uploads/2021/11/LOGALI_AZUL_DEGRADE_RGB_PNG-10.png?resize=823%2C800&ssl=1' as LogoURL,    
       @Semantics.imageUrl: true

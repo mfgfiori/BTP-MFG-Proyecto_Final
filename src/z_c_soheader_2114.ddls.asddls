@@ -12,7 +12,7 @@ define root view entity z_c_soheader_2114
       createon     as CreateOn,
       deliverydate as DeliveryDate,
       orderstatus  as Status,
-      IconStatus   as IconStatus,     
+      StatusText   as StatusText,     
       @Semantics.imageUrl: true    
       LogoURL      as LogoURL,
       @Semantics.imageUrl: true  

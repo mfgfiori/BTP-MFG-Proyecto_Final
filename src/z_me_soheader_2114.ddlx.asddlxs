@@ -32,6 +32,7 @@ annotate view z_c_soheader_2114 with
       identification  : [{ position: 10, label: 'Sales Order Id' }]}
 
   SalesOrderId;
+                  
   @UI: {
   lineItem        : [{ position: 20, importance: #HIGH }],
   identification  : [{ position: 20, label: 'Email' }]}
@@ -58,13 +59,15 @@ annotate view z_c_soheader_2114 with
       identification  : [{ position: 70, label: 'Delivery Date' }]}
   DeliveryDate;
   @UI: {
-       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'IconStatus'}],
+       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'Status'},
+                          { position: 15, importance: #HIGH, type: #FOR_ACTION, dataAction: 'cancelOrder', label: 'Cancel Order'}],
 //                          { position: 90, importance: #HIGH, label: 'Image', value: 'ImageURL'}],
-       identification  : [{ position: 80, label: 'Order Status', criticality: 'IconStatus'}]
+       identification  : [{ position: 80, label: 'Order Status', criticality: 'Status'},
+                          { position: 15 ,  type: #FOR_ACTION, dataAction: 'cancelOrder', label: 'Cancel Order' }]
 //                          { position: 90, label: 'Image', value: 'ImageURL'  }]                           
        }
-  @UI.textArrangement: #TEXT_ONLY
-  Status;
+  @UI.textArrangement: #TEXT_ONLY  
+  StatusText;
   @UI.hidden: true      
   ImageURL;
 }

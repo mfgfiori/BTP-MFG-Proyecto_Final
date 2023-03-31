@@ -10,7 +10,7 @@ authorization master ( instance )
 {
 
   //fields: read only
-  field ( readonly ) iconstatus, logourl;
+  field ( readonly ) StatusText, logourl;
   //mandatory fields that are required to create a Sales Order
   field ( mandatory : create ) id, email;
   field ( features:instance ) id;
@@ -18,6 +18,9 @@ authorization master ( instance )
   create;
   update;
   delete;
+
+  //actions
+  action (features : instance) cancelOrder result[1] $self;
 
   association _SalesOrderItems { create ( features : instance ); }
 

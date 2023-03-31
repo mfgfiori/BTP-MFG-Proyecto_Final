@@ -7,6 +7,8 @@ define behavior for z_c_soheader_2114 alias SalesOrder
   use update;
   use delete;
 
+  use action cancelOrder;
+
   use association _SalesOrderItems { create; }
 }
 
